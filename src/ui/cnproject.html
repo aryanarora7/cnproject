@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Accident Prevention System</title>
+  <link rel="stylesheet" href="/style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -80,14 +81,17 @@ footer
     a(href="https://dribbble.com/oliviale" target="_blank")
      i.icon-social-dribbble.icons
   </style>
+  <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>Accident Prevention System</h1>
 
-    <button class="button"><center>Start</center></button>
-    <button class="button button-red"><center>Stop</center></button>
-    <button class="button"><center>Reset</center></button>
+    <div>
+
+    </div>
+    <button id="toggleBtn"><center>Start</center></button>
   </div>
+  <script src="/index.js"></script>
 </body>
 </html>
