@@ -21,6 +21,12 @@ io.on('connection', socket => {
         console.log('Disconnected');
     });
 
+    // Handle text change event from a client
+    socket.on('textChange', newText => {
+        // Broadcast the text change to all connected clients
+        socket.broadcast.emit('textChange', newText);
+    });
+
     socket.on('buttonState', value => {
         console.log('buttonState:', value);
         buttonState = value;

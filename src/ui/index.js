@@ -22,6 +22,21 @@ const updateUI = () => {
     toggleBtn.innerText = buttonState ? 'Start' : 'Stop';
 };
 
+// Retrieve references to the input field and the element to display received text
+const textInput = document.getElementById('textInput');
+const receivedText = document.getElementById('receivedText');
+
+// Handle text input change event
+textInput.addEventListener('input', () => {
+    const newText = textInput.value;
+    socket.emit('textChange', newText);
+});
+
+// Update the UI when receiving text change from the server
+socket.on('textChange', newText => {
+    receivedText.innerText = newText;
+});
+
 socket.on('buttonState', state => {
     console.log('updated state', state);
     buttonState = state;
